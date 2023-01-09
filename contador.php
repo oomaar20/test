@@ -1,10 +1,14 @@
 <?php
-	$count=$_COOKIE['count'];
-	if(isset($count)){
-		$count++;
-	}else{
-		$count=0;
-	}
-	setcookie ('count', $count);
-	echo $count;
+$count = 0;
+
+if (isset($_COOKIE['count'])) {
+    $count = intval($_COOKIE['count']);
+}
+
+$count++;
+
+
+setcookie('count', $count);
+
+echo $count;
 ?>
