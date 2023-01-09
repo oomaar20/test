@@ -1,14 +1,9 @@
 <?php
-$count = 0;
-
-if (isset($_COOKIE['count'])) {
-    $count = intval($_COOKIE['count']);
+session_start(); //start session
+$num=0;
+if(isset($_SESSION['num'])) {
+$num= $_SESSION['num'];
 }
-
-$count++;
-
-
-setcookie('count', $count);
-
-echo $count;
+$_SESSION['num'] = ++$num;
+echo $num;
 ?>
